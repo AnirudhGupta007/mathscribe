@@ -1,0 +1,30 @@
+// tsconfig.node.json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    // "allowImportingTsExtensions": true, // Removed to fix TS5096 error
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": false,              // Ensure emit is enabled
+    "composite": true,            // Enable composite projects
+    "declaration": true,          // Generate declaration files
+    "outDir": "./dist/node",      // Specify output directory
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["vite.config.ts"]
+}
